@@ -1,15 +1,26 @@
-# [Machine Translation (MT)](#machine-translation-(MT))
+# [Machine Translation (MT)](#machine-translation-(mt))
 
-## 1. [Type de modele ](#Type-de-modele)
-### [1.1. Règle Basée (Rule-Based)](#Règle-Basée (Rule-Based))
-### [1.2. Basée sur les Corpus (Statistical Machine Translation, SMT)](#basee-sur-les-Corpus-Statistical-Machine-Translation-SMT)
+## 1. [Types de modèles](#types-de-modèles)
+### [1.1. Basé sur des règles (Rule-Based)](#basé-sur-des-règles-(rule-based))
+### [1.2. Basé sur les corpus (Statistical Machine Translation, SMT)](#basé-sur-les-corpus-(statistical-machine-translation-smt))
+### [1.3 Neural Machine Translation (NMT)](#neural-machine-translation-(nmt))
 
-### [1.3 Neural Machine Translation (NMT)](#Neural-Machine-Translation-(NMT))
+## 2. [Neural Machine Translation](#neural-machine-translation)
+### [2.1. Seq2Seq avec LSTM/GRU](#seq2seq-avec-lstm/gru)
+### [2.2. Seq2Seq avec mécanisme d'attention](#seq2seq-avec-mécanisme-d'attention)
+### [2.3. Transformers](#transformers)
 
-## 2. [Neural Machine Translation](#Neural-Machine-Translation)
-### [2.1. Seq2Seq avec LSTM/GRU](#Seq2Seq-avec-LSTM/GRU)
-### [2.2.Seq2Seq avec Attention Mechanism](#Seq2Seq-avec-Attention-Mechanism)
-### [2.3. Transformers](#Transformers)
+## 3. [Modèles récents de Machine Translation](#modèles-récents-de-machine-translation)
+   [3.1. M2M-100](#m2m-100)
+
+   [3.2. NLLB-200](#nllb-200)
+
+## 4. [Métriques d'évaluation en Machine Translation](#métriques-d'évaluation-en-machine-translation)
+
+## 5. [Quelques notions importantes à savoir](#quelques-notions-importantes-à-savoir)
+
+
+
 
 
 
@@ -81,8 +92,35 @@ Le modèle Seq2Seq avec mécanisme d'attention améliore la performance en captu
 **Avantages** : Excellente parallélisation, capacité à capturer les relations à longue distance plus efficacement, et performances supérieures sur de nombreux benchmarks de traduction automatique.
 
 
+### Modèles récents de Machine Translation
 
+#### 3.1. M2M-100
+M2M-100 est un modèle de traduction automatique multilingue développé par Facebook AI, capable de traduire directement entre 100 langues sans passer par une langue pivot comme l'anglais. Il utilise un réseau de neurones transformateur pour fournir des traductions de haute qualité. Pour en savoir plus sur le M2M-100, visitez ce [lien](https://huggingface.co/transformers/v4.5.1/model_doc/wav2vec2.html).
 
+#### 3.2. NLLB-200
+NLLB-200 (No Language Left Behind) est un autre modèle multilingue conçu pour améliorer la traduction automatique dans des langues moins représentées. Ce modèle, également basé sur l'architecture des transformateurs, vise à rendre la traduction plus accessible et précise pour une large gamme de langues. Pour en savoir plus sur le NLLB-200, visitez ce [lien](https://huggingface.co/docs/transformers/model_doc/nllb).
+
+### Métriques d'évaluation en Machine Translation
+
+Les métriques d'évaluation en traduction automatique mesurent la qualité des traductions produites par les modèles. Parmi les plus courantes, on trouve :
+- **BLEU (Bilingual Evaluation Understudy)** : Évalue la précision en comparant les n-grammes de la traduction générée à ceux de la référence.
+- **METEOR (Metric for Evaluation of Translation with Explicit ORdering)** : Prend en compte la précision, le rappel, et l'ordre des mots.
+- **TER (Translation Edit Rate)** : Mesure le nombre de modifications nécessaires pour convertir la traduction générée en la référence.
+- **ROUGE (Recall-Oriented Understudy for Gisting Evaluation)** : Utilisé principalement pour l'évaluation des résumés, mais applicable à la traduction.
+
+Chaque métrique a ses propres critères et méthodes pour évaluer la précision, la fluidité et l'adéquation des traductions.
+
+### Quelques notions importantes à savoir
+
+Pour bien comprendre et travailler avec la traduction automatique, il est essentiel de connaître certains concepts clés :
+- **Alignement des phrases** : Processus de mise en correspondance des segments de texte entre les langues source et cible.
+- **Corpus parallèle** : Ensemble de textes alignés phrase par phrase dans deux langues différentes, utilisé pour entraîner et évaluer les modèles de traduction.
+- **Mécanisme d'attention** : Technique utilisée dans les modèles de réseaux de neurones pour se concentrer sur les parties pertinentes de la séquence d'entrée lors de la génération de la sortie.
+- **Surapprentissage (Overfitting)** : Problème où un modèle apprend trop précisément les détails d'un jeu de données d'entraînement, ce qui réduit sa capacité à généraliser à de nouvelles données.
+- **Model pruning** : Technique visant à réduire la taille d'un modèle en supprimant les poids et connexions jugés non essentiels, ce qui permet d'améliorer l'efficacité et de réduire les besoins en calcul.
+- **Model distillation** : Processus dans lequel un modèle plus petit (student) est entraîné pour reproduire les sorties d'un modèle plus grand et plus performant (teacher), permettant ainsi de créer des modèles plus légers et plus rapides tout en conservant une grande partie de la performance du modèle original.
+
+Ces notions sont essentielles pour comprendre les défis et les solutions associés à la traduction automatique.
 
 
 
